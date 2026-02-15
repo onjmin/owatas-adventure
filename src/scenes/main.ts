@@ -4,7 +4,7 @@ phina.define("TitleScene", {
 	init(options: any) {
 		this.superInit(options);
 
-		new (phina.display as any).Label({
+		new phina.display.Label({
 			text: "The Big Adventure of Owata`s Life",
 			padding: 0,
 			fontSize: 14,
@@ -13,7 +13,7 @@ phina.define("TitleScene", {
 			y: 3,
 		}).addChildTo(this);
 
-		new (phina.display as any).Label({
+		new phina.display.Label({
 			text: "人生ｵﾜﾀ                       \n＼(^o^)／\n                     の大冒険",
 			fontSize: 44,
 			lineHeight: 1,
@@ -22,7 +22,7 @@ phina.define("TitleScene", {
 			y: 20,
 		}).addChildTo(this);
 
-		new (phina.display as any).RectangleShape({
+		new phina.display.RectangleShape({
 			width: 518,
 			height: 146,
 			padding: 0,
@@ -34,7 +34,7 @@ phina.define("TitleScene", {
 			y: 20,
 		}).addChildTo(this);
 
-		new (phina.display as any).Label({
+		new phina.display.Label({
 			text: "START",
 			fontSize: 32,
 			lineHeight: 1,
@@ -56,17 +56,17 @@ phina.define("MainScene", {
 
 		this.backgroundColor = "white";
 
-		const owata = new (phina as any).Owata({
+		const owata = new Owata({
 			x: 484,
 			y: 280,
 		});
 		owata.addChildTo(this);
 		this.owata = owata;
 
-		this.bulletManager = new (phina as any).BulletManager();
+		this.bulletManager = new BulletManager();
 		this.bulletManager.setup(this);
 
-		new (phina.display as any).Label({
+		new AAObject({
 			text: "┌───┐\n│←樹海│\n└───┘\n║\n║",
 			padding: -6,
 			width: 57,
@@ -76,11 +76,11 @@ phina.define("MainScene", {
 			y: this.gridY.width - 92,
 		}).addChildTo(this);
 
-		const grounds = new (phina.display as any).DisplayElement();
+		const grounds = new DisplayElement();
 		grounds.addChildTo(this);
 		this.grounds = grounds;
 
-		new (phina.display as any).Label({
+		new AAObject({
 			text: "┌────────────\n│                        \n│                        ",
 			width: 167,
 			height: 34,
@@ -89,7 +89,7 @@ phina.define("MainScene", {
 			y: this.gridY.width - 34,
 		}).addChildTo(grounds);
 
-		new (phina.display as any).Label({
+		new AAObject({
 			text: "────────────┐\n                        │\n                        │",
 			width: 167,
 			height: 34,
@@ -98,7 +98,7 @@ phina.define("MainScene", {
 			y: this.gridY.width - 34,
 		}).addChildTo(grounds);
 
-		const n = new (phina.display as any).Label({
+		const n = new AAObject({
 			text: "△△△△△△△△△△△△△△△\n│                            │\n└──────────────┘\n§\n§\n§\n§\n§\n§\n§\n§",
 			width: 212,
 			height: 14 * 3 - 6,
@@ -116,7 +116,7 @@ phina.define("MainScene", {
 		};
 		this.needle = n;
 
-		const s = new (phina as any).Scaffold({
+		const s = new Scaffold({
 			text: "[ニニニ]",
 			width: 52,
 			height: 13,
@@ -129,7 +129,7 @@ phina.define("MainScene", {
 		}).addChildTo(grounds);
 		this.scaffold = s;
 
-		this.label = new (phina.display as any).Label({
+		this.label = new phina.display.Label({
 			text: "リトライ (R)",
 			originX: 1,
 			originY: 0,
@@ -200,20 +200,5 @@ phina.define("MainScene", {
 });
 
 phina.main(() => {
-	const app = new (phina.app as any).GameApp({
-		startLabel: "title",
-		width: 550,
-		height: 350,
-		fit: false,
-		assets: {
-			sound: {
-				owata: "owata1.wav",
-			},
-		},
-		scenes: [
-			{ label: "title", className: "TitleScene", nextLabel: "main" },
-			{ label: "main", className: "MainScene", nextLabel: "main" },
-		],
-	});
-	app.run();
+	// Classes are registered, app will be created here
 });

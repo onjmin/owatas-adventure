@@ -39,11 +39,11 @@ phina.define("BulletManager", {
 	},
 
 	fire(x: number, y: number, leftFace: boolean) {
-		if (this.bullets.length >= (phina as any).Bullet.prototype.maxCount) {
+		if (this.bullets.length >= Bullet.prototype.maxCount) {
 			return;
 		}
 
-		const bullet = new (phina as any).Bullet({
+		const bullet = new Bullet({
 			x: x + (leftFace ? -20 : 20),
 			y: y,
 			leftFace: leftFace,

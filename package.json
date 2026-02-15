@@ -5,9 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run server.js",
-    "build": "tsc && node build.js",
-    "watch": "tsc --watch"
+    "dev": "bun run build && bun run server.js",
+    "build": "node build.js",
+    "watch": "node build.js --watch"
   },
   "repository": {
     "type": "git",
