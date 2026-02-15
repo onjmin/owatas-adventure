@@ -1,0 +1,26 @@
+{
+  "name": "owatas-adventure",
+  "version": "1.0.0",
+  "description": "[人生ｵﾜﾀ＼(^o^)／の大冒険 for Flash](http://king-soukutu.com/flash/owata.html) の HTML5 版クローン。",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onjmin/owatas-adventure.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onjmin/owatas-adventure/issues"
+  },
+  "homepage": "https://github.com/onjmin/owatas-adventure#readme",
+  "dependencies": {
+    "@hono/node-server": "^1.19.9",
+    "hono": "^4.11.9"
+  },
+  "type": "module"
+}

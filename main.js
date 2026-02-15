@@ -1,4 +1,6 @@
 const SPEED = 12;
+const BULLET_SPEED = 10;
+const MAX_BULLETS = 3;
 
 phina.define('TitleScene', {
 
@@ -61,12 +63,15 @@ phina.define('MainScene', {
 
     this.backgroundColor = 'white';
 
-    const owata = new Owata({
+const owata = new Owata({
       x: 484,
       y: 280,
     });
     owata.addChildTo(this);
     this.owata = owata;
+
+    this.bulletManager = new BulletManager();
+    this.bulletManager.setup(this);
 
     new AAObject({
       text: '┌───┐\n│←樹海│\n└───┘\n║\n║',
@@ -146,7 +151,7 @@ phina.define('MainScene', {
     }).addChildTo(this).hide();
   },
 
-  update({
+update({
     keyboard,
     frame,
   }) {
@@ -155,6 +160,7 @@ phina.define('MainScene', {
       grounds,
       needle,
       scaffold,
+      bulletManager,
     } = this;
 
     if (this.gameover || owata.hitTestElement(needle)) {
@@ -185,9 +191,21 @@ phina.define('MainScene', {
         owata.stay();
       }
 
-      if (keyboard.getKey('z')) {
+if (keyboard.getKey('z')) {
         owata.jump();
       }
+
+      if (keyboard.getKey('x')) {
+        if (!this.xPressed) {
+          bulletManager.fire(owata.x, owata.y, owata.leftFace);
+          this.xPressed = true;
+        }
+      }
+      else {
+        this.xPressed = false;
+      }
+
+      bulletManager.update();
     }
   },
 
