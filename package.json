@@ -18,9 +18,8 @@
     "url": "https://github.com/onjmin/owatas-adventure/issues"
   },
   "homepage": "https://github.com/onjmin/owatas-adventure#readme",
+  "type": "module",
   "dependencies": {
-    "@hono/node-server": "^1.19.9",
     "hono": "^4.11.9"
-  },
-  "type": "module"
+  }
 }
