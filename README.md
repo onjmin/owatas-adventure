@@ -2,13 +2,12 @@
 
 [人生ｵﾜﾀ＼(^o^)／の大冒険 for Flash](http://king-soukutu.com/flash/owata.html) の HTML5 版クローン。
 
-## ライブラリー
+## ライブラリ・ツール
 
 - [phina.js](https://github.com/phinajs/phina.js) - ゲームライブラリ
-- [TypeScript](https://www.typescriptlang.org/) - 型付け
-- [esbuild](https://esbuild.github.io/) - バンドラー
 - [Bun](https://bun.sh/) - ランタイム
 - [Hono](https://hono.dev/) - Webフレームワーク
+- [Biome](https://biomejs.dev/) - リント・フォーマット
 
 ## コントリビューター
 

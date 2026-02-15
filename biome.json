@@ -5,7 +5,7 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"includes": ["public/**/*.js", "_force-ignore:node_modules"]
+		"includes": ["public/**/*.js"]
 	},
 	"formatter": {
 		"enabled": true,
