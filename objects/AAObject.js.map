@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/objects/AAObject.ts"],
+  "sourcesContent": ["phina.define(\"AAObject\", {\n\tsuperClass: \"Label\",\n\n\tinit(options: any) {\n\t\tif (typeof options === \"string\") {\n\t\t\tconst text = options;\n\t\t\toptions = {\n\t\t\t\ttext,\n\t\t\t};\n\t\t}\n\n\t\tconst defaults = {\n\t\t\ttext: \"(^o^ )\",\n\t\t\tfontFamily: \"monospace\",\n\t\t\tfontSize: 14,\n\t\t\tlineHeight: 1,\n\t\t\twidth: 40,\n\t\t\theight: 7,\n\t\t\tpadding: 0,\n\t\t\toriginX: 0,\n\t\t\toriginY: 0,\n\t\t};\n\n\t\tthis.superInit(Object.assign(defaults, options));\n\t},\n});\n"],
+  "mappings": ";;AAAA,QAAM,OAAO,YAAY;AAAA,IACxB,YAAY;AAAA,IAEZ,KAAK,SAAc;AAClB,UAAI,OAAO,YAAY,UAAU;AAChC,cAAM,OAAO;AACb,kBAAU;AAAA,UACT;AAAA,QACD;AAAA,MACD;AAEA,YAAM,WAAW;AAAA,QAChB,MAAM;AAAA,QACN,YAAY;AAAA,QACZ,UAAU;AAAA,QACV,YAAY;AAAA,QACZ,OAAO;AAAA,QACP,QAAQ;AAAA,QACR,SAAS;AAAA,QACT,SAAS;AAAA,QACT,SAAS;AAAA,MACV;AAEA,WAAK,UAAU,OAAO,OAAO,UAAU,OAAO,CAAC;AAAA,IAChD;AAAA,EACD,CAAC;",
+  "names": []
+}

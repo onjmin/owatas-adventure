@@ -1,6 +1,5 @@
 "use strict";
-var phina = (() => {
-  // src/scenes/main.ts
+(() => {
   phina.define("TitleScene", {
     superClass: "DisplayScene",
     init(options) {
@@ -49,15 +48,15 @@ var phina = (() => {
     init(options) {
       this.superInit(options);
       this.backgroundColor = "white";
-      const owata = new phina.Owata({
+      const owata = new Owata({
         x: 484,
         y: 280
       });
       owata.addChildTo(this);
       this.owata = owata;
-      this.bulletManager = new phina.BulletManager();
+      this.bulletManager = new BulletManager();
       this.bulletManager.setup(this);
-      new phina.display.Label({
+      new AAObject({
         text: "\u250C\u2500\u2500\u2500\u2510\n\u2502\u2190\u6A39\u6D77\u2502\n\u2514\u2500\u2500\u2500\u2518\n\u2551\n\u2551",
         padding: -6,
         width: 57,
@@ -66,10 +65,10 @@ var phina = (() => {
         x: 10,
         y: this.gridY.width - 92
       }).addChildTo(this);
-      const grounds = new phina.display.DisplayElement();
+      const grounds = new DisplayElement();
       grounds.addChildTo(this);
       this.grounds = grounds;
-      new phina.display.Label({
+      new AAObject({
         text: "\u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\u2502                        \n\u2502                        ",
         width: 167,
         height: 34,
@@ -77,7 +76,7 @@ var phina = (() => {
         x: this.gridX.width - 167,
         y: this.gridY.width - 34
       }).addChildTo(grounds);
-      new phina.display.Label({
+      new AAObject({
         text: "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                        \u2502\n                        \u2502",
         width: 167,
         height: 34,
@@ -85,7 +84,7 @@ var phina = (() => {
         x: 0,
         y: this.gridY.width - 34
       }).addChildTo(grounds);
-      const n = new phina.display.Label({
+      const n = new AAObject({
         text: "\u25B3\u25B3\u25B3\u25B3\u25B3\u25B3\u25B3\u25B3\u25B3\u25B3\u25B3\u25B3\u25B3\u25B3\u25B3\n\u2502                            \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\xA7\n\xA7\n\xA7\n\xA7\n\xA7\n\xA7\n\xA7\n\xA7",
         width: 212,
         height: 14 * 3 - 6,
@@ -97,7 +96,7 @@ var phina = (() => {
         this.tweener.by({ y: -135 }, 400, "easeOutCubic").wait(500).by({ y: 135 }, 2200, "easeOutCubic").wait(100).play();
       };
       this.needle = n;
-      const s = new phina.Scaffold({
+      const s = new Scaffold({
         text: "[\u30CB\u30CB\u30CB]",
         width: 52,
         height: 13,
@@ -168,22 +167,6 @@ var phina = (() => {
     }
   });
   phina.main(() => {
-    const app = new phina.app.GameApp({
-      startLabel: "title",
-      width: 550,
-      height: 350,
-      fit: false,
-      assets: {
-        sound: {
-          owata: "owata1.wav"
-        }
-      },
-      scenes: [
-        { label: "title", className: "TitleScene", nextLabel: "main" },
-        { label: "main", className: "MainScene", nextLabel: "main" }
-      ]
-    });
-    app.run();
   });
 })();
 //# sourceMappingURL=main.js.map

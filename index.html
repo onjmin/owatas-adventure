@@ -2,6 +2,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" href="https://avatars.githubusercontent.com/u/88383494" />
 <title>人生ｵﾜﾀ＼(^o^)／の大冒険 for HTML5</title>
 
 <style>
@@ -21,6 +22,31 @@
 
 <script src="https://cdn.rawgit.com/phi-jp/phina.js/v0.2.0/build/phina.js"></script>
 <script>
+  window.phina = phina;
   phina.globalize();
 </script>
-<script src="main.js"></script>
+<script src="objects/AAObject.js"></script>
+<script src="objects/Scaffold.js"></script>
+<script src="objects/Owata.js"></script>
+<script src="objects/Bullet.js"></script>
+<script src="scenes/main.js"></script>
+<script>
+  phina.main(function() {
+    const app = new GameApp({
+      startLabel: "title",
+      width: 550,
+      height: 350,
+      fit: false,
+      assets: {
+        sound: {
+          owata: "owata1.wav",
+        },
+      },
+      scenes: [
+        { label: "title", className: "TitleScene", nextLabel: "main" },
+        { label: "main", className: "MainScene", nextLabel: "main" },
+      ],
+    });
+    app.run();
+  });
+</script>

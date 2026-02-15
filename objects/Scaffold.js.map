@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/objects/Scaffold.ts"],
+  "sourcesContent": ["phina.define(\"Scaffold\", {\n\tsuperClass: \"AAObject\",\n\n\tinit(options: any) {\n\t\tconst defaults = {\n\t\t\ttext: \"[\u30CB\u30CB\u30CB]\",\n\t\t\twidth: 52,\n\t\t\theight: 14,\n\n\t\t\tvelocityX: 0,\n\t\t\tvelocityY: 0,\n\t\t\tboundaryRight: 0,\n\t\t\tboundaryLeft: 0,\n\t\t};\n\n\t\tconst opt = Object.assign(defaults, options);\n\t\tthis.superInit(opt);\n\n\t\tthis.physical.velocity.x = opt.velocityX;\n\t\tthis.physical.velocity.y = opt.velocityY;\n\n\t\tthis.boundaryRight = opt.boundaryRight;\n\t\tthis.boundaryLeft = opt.boundaryLeft;\n\t},\n\n\tupdate() {\n\t\tif (this.left < this.boundaryLeft || this.boundaryRight < this.right) {\n\t\t\tthis.physical.velocity.x *= -1;\n\t\t}\n\t},\n});\n"],
+  "mappings": ";;AAAA,QAAM,OAAO,YAAY;AAAA,IACxB,YAAY;AAAA,IAEZ,KAAK,SAAc;AAClB,YAAM,WAAW;AAAA,QAChB,MAAM;AAAA,QACN,OAAO;AAAA,QACP,QAAQ;AAAA,QAER,WAAW;AAAA,QACX,WAAW;AAAA,QACX,eAAe;AAAA,QACf,cAAc;AAAA,MACf;AAEA,YAAM,MAAM,OAAO,OAAO,UAAU,OAAO;AAC3C,WAAK,UAAU,GAAG;AAElB,WAAK,SAAS,SAAS,IAAI,IAAI;AAC/B,WAAK,SAAS,SAAS,IAAI,IAAI;AAE/B,WAAK,gBAAgB,IAAI;AACzB,WAAK,eAAe,IAAI;AAAA,IACzB;AAAA,IAEA,SAAS;AACR,UAAI,KAAK,OAAO,KAAK,gBAAgB,KAAK,gBAAgB,KAAK,OAAO;AACrE,aAAK,SAAS,SAAS,KAAK;AAAA,MAC7B;AAAA,IACD;AAAA,EACD,CAAC;",
+  "names": []
+}

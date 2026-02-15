@@ -1,0 +1,29 @@
+"use strict";
+(() => {
+  phina.define("Scaffold", {
+    superClass: "AAObject",
+    init(options) {
+      const defaults = {
+        text: "[\u30CB\u30CB\u30CB]",
+        width: 52,
+        height: 14,
+        velocityX: 0,
+        velocityY: 0,
+        boundaryRight: 0,
+        boundaryLeft: 0
+      };
+      const opt = Object.assign(defaults, options);
+      this.superInit(opt);
+      this.physical.velocity.x = opt.velocityX;
+      this.physical.velocity.y = opt.velocityY;
+      this.boundaryRight = opt.boundaryRight;
+      this.boundaryLeft = opt.boundaryLeft;
+    },
+    update() {
+      if (this.left < this.boundaryLeft || this.boundaryRight < this.right) {
+        this.physical.velocity.x *= -1;
+      }
+    }
+  });
+})();
+//# sourceMappingURL=Scaffold.js.map
