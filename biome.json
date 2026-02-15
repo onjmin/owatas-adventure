@@ -5,12 +5,7 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"includes": [
-			"src/**/*.ts",
-			"src/**/*.tsx",
-			"_force-ignore:node_modules",
-			"_force-ignore:dist"
-		]
+		"includes": ["public/**/*.js", "_force-ignore:node_modules"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -33,7 +28,7 @@
 				"noUnusedImports": "error"
 			},
 			"suspicious": {
-				"noExplicitAny": "warn",
+				"noExplicitAny": "off",
 				"noDoubleEquals": "error"
 			},
 			"style": {

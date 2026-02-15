@@ -30,23 +30,3 @@
 <script src="objects/Owata.js"></script>
 <script src="objects/Bullet.js"></script>
 <script src="scenes/main.js"></script>
-<script>
-  phina.main(function() {
-    const app = new GameApp({
-      startLabel: "title",
-      width: 550,
-      height: 350,
-      fit: false,
-      assets: {
-        sound: {
-          owata: "owata1.wav",
-        },
-      },
-      scenes: [
-        { label: "title", className: "TitleScene", nextLabel: "main" },
-        { label: "main", className: "MainScene", nextLabel: "main" },
-      ],
-    });
-    app.run();
-  });
-</script>

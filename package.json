@@ -5,9 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run build && bun run server.js",
-    "build": "node build.js",
-    "watch": "node build.js --watch"
+    "dev": "bun run server.js"
   },
   "repository": {
     "type": "git",
@@ -25,8 +23,6 @@
     "hono": "^4.11.9"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.15",
-    "typescript": "^5.0.0",
-    "esbuild": "^0.20.0"
+    "@biomejs/biome": "2.3.15"
   }
 }

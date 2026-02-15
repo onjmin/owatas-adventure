@@ -6,12 +6,12 @@ import { join } from 'path';
 const app = new Hono();
 
 app.get('/', () => {
-  return new Response(readFileSync(join('./dist', 'index.html')), {
+  return new Response(readFileSync(join('./public', 'index.html')), {
     headers: { 'Content-Type': 'text/html' },
   });
 });
 
-app.use('/*', serveStatic({ root: './dist/' }));
+app.use('/*', serveStatic({ root: './public/' }));
 
 export default {
   port: 8080,
