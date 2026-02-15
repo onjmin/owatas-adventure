@@ -4,7 +4,16 @@
 
 ## ライブラリー
 
-- [phina.js](https://github.com/phinajs/phina.js)
+- [phina.js](https://github.com/phinajs/phina.js) - ゲームライブラリ
+- [TypeScript](https://www.typescriptlang.org/) - 型付け
+- [esbuild](https://esbuild.github.io/) - バンドラー
+- [Bun](https://bun.sh/) - ランタイム
+- [Hono](https://hono.dev/) - Webフレームワーク
+
+## コントリビューター
+
+- [おんJ民](https://github.com/onjmin)
+- [opencode](https://github.com/anomalyco)
 
 ## 効果音
 
